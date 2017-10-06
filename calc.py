@@ -22,17 +22,17 @@ PkmnLvl = args.integers[9]
 
 GoHp = 2 * Hp
 
-PA = ( 2*( max( (Atk),(SpA) )*(7/8)+min( (Atk),(SpA) )*(1/8) ) )
-GoAtk = round( (PA*0.85)+(PA*Speed/500) )
+PA = ( 2*( max( (Atk),(SpA) )*(7/8.0)+min( (Atk),(SpA) )*(1/8.0) ) )
+GoAtk = round( (PA*0.85)+(PA*Speed/500.0) )
 
-PD = ( 2*( max( (Def),(SpD) )*(7/8)+min( (Def),(SpD) )*(1/8) ) )
-GoDef = round( (PD*0.85)+(PD*Speed/500) )
+PD = ( 2*( max( (Def),(SpD) )*(7/8.0)+min( (Def),(SpD) )*(1/8.0) ) )
+GoDef = round( (PD*0.85)+(PD*Speed/500.0) )
 
 lvl_const = 0.7903
 
 AtkFactor = GoAtk + AtkIV
 DefFactor = ( GoDef + DefIV ) ** 0.5
 HpFactor = ( GoHp + StaIV ) ** 0.5
-CP = ( AtkFactor * DefFactor * HpFactor ) * ( lvl_const ** 2 ) / 10
+CP = ( AtkFactor * DefFactor * HpFactor ) * ( lvl_const ** 2 ) / 10.0
 
 print CP
